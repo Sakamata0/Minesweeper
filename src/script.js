@@ -2,14 +2,14 @@
 //                                         Design Configuration
 //======================================================================================================
 //======================================================================================================
-//                              			 Time and Storage
+//                                          Time and Storage
 //======================================================================================================
 let timer;
 let local = window.localStorage;
 let max_width, max_height; 
 var mines, flags = 0, first_touch = false, lost = false, won = false;
 //======================================================================================================
-//               							   Game Fields
+//               			     	Game Fields
 //======================================================================================================
 field_width = document.getElementById("width");
 field_height = document.getElementById("height");
@@ -20,14 +20,14 @@ blocks = document.querySelector(".blocks");
 game = document.querySelector(".game");
 time = document.querySelector("#time span");
 //======================================================================================================
-//    										 Game Buttons
+//    					       Game Buttons
 //======================================================================================================
 settings_button = document.querySelector(".settings");
 close_button = document.querySelector(".close");
 save_button = document.getElementById("save");
 restart_button = document.getElementById("restart");
 //======================================================================================================
-//                                     	    EventListeners
+//                                     	       EventListeners
 //======================================================================================================
 settings_button.addEventListener("click", ()=>open_menu());
 close_button.addEventListener("click", ()=>close_menu());
@@ -50,7 +50,7 @@ field_mines.addEventListener("change", ()=>{
 	check_min_max(field_mines, 0, max_mines);
 })
 //======================================================================================================
-//     										Loading process
+//     					      Loading process
 //======================================================================================================
 window.addEventListener("load", ()=>{
 	load_settings();
@@ -74,6 +74,11 @@ window.addEventListener("load", ()=>{
 	mineslist = new Array(local.width*local.height);
 	GameConfig();
 })
+//======================================================================================================
+// 						   Methods
+//======================================================================================================
+//======================================================================================================
+//                                  	     Design Configuration
 //======================================================================================================
 function open_menu()
 {
@@ -175,32 +180,8 @@ function updateTimer()
 {
 	time.innerHTML = convertSecTime(convertTimeSec(time.innerHTML)+1); 
 }
-
-function convertTimeSec(time)
-{
-	return Number(time.substr(0, 2)) * 60 + Number(time.substr(3, 2));
-}
-
-function convertSecTime(time)
-{
-	minute = parseInt(time/60);
-	seconds = time%60;
-
-	if(minute < 10)
-	{
-		if(seconds < 10)
-		{
-			return "0" + String(minute) + ":0" + String(seconds);
-		}
-		return "0" + String(minute) + ":" + String(seconds);
-	}
-	return String(minute) + ":" + String(seconds);
-}
 //======================================================================================================
 //                                       GamePlay Configuration
-//======================================================================================================
-//======================================================================================================
-// 												Methods
 //======================================================================================================
 function loadMines(first)
 {
@@ -357,9 +338,8 @@ function near_mines(block)
 	return counter;
 }
 //======================================================================================================
-// 											Functions
+// 						    Functions
 //======================================================================================================
-
 function surroundings(block)
 {
 	var res = [];
@@ -403,6 +383,26 @@ function htmlBlock(block)
 function checkmine(place)
 {
 	return mineslist[place] == "mine";
+}
+function convertTimeSec(time)
+{
+	return Number(time.substr(0, 2)) * 60 + Number(time.substr(3, 2));
+}
+
+function convertSecTime(time)
+{
+	minute = parseInt(time/60);
+	seconds = time%60;
+
+	if(minute < 10)
+	{
+		if(seconds < 10)
+		{
+			return "0" + String(minute) + ":0" + String(seconds);
+		}
+		return "0" + String(minute) + ":" + String(seconds);
+	}
+	return String(minute) + ":" + String(seconds);
 }
 //======================================================================================================
 // 	End Code :)       		  @copyryight-Sakamata: github_user:Sakamta0 
