@@ -54,6 +54,7 @@ field_mines.addEventListener("change", ()=>{
 //======================================================================================================
 window.addEventListener("load", ()=>{
 	load_settings();
+	mines = parseInt(local.mines);
 
 	blocks.style.gridTemplateColumns = "repeat("+local.width+", 1fr)"
 	for(let i = 0; i < local.height; i++)
@@ -144,7 +145,6 @@ function save_availabilty()
 
 function load_settings()
 {
-	mines = parseInt(local.mines);
 	if(local.width == null || local.height == null|| local.mines == null || local.highscore == null)
 	{
 		local.clear();
