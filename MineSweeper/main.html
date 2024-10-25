@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./src/styles.css">
+	<title>MineSweeper</title>
+</head>
+<body>
+	<div class="menu">
+		<div class="container">
+			<h1 class="title">MineSweeper</h1>
+			<div class="settings button"></div>
+		</div>
+	</div>
+	<div class="game">	
+		<div class="blocks grid"></div>
+
+		<div class="score container">
+			<div id="flags_score" class="container"><span>0/100</span><img src="./assets/Images/flag.png" title="flags"></div>
+			<div id="time" class="container"><span>00:00</span><img src="./assets/Images/time.png" title="bombs"></div>
+			<div id="highscore" class="container">Highscore: <span></span></div>
+		</div>
+
+		<div id="announcement">
+			<span></span>
+			<div class="container button" id="rs_container">
+				<input type="button" id="restart"><label for="restart">Restart</label>
+			</div>
+		</div>
+
+		<div id="settings_popup">
+			<div class="container" id="cb_container">
+				<div class="close button"></div>
+			</div>
+			<div class="container menu_label">
+				<label for="width">Width </label><input type="number" id="width" oninput="spell_check(this)">
+			</div>
+			<div class="container menu_label">
+				<label for="height">Height </label><input type="number" id="height" oninput="spell_check(this)">
+			</div>
+			<div class="container menu_label">
+				<label for="mines">Mines </label><input type="number" id="mines" oninput="spell_check(this)">
+			</div>
+			
+			<div class="container button" id="sv_container">
+				<input type="button" id="save"><label for="save">Save</label>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">&copy; Sakamata</div>
+	
+	<script src="./src/script.js"></script>
+</body>
+</html>
