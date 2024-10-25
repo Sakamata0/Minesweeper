@@ -1,0 +1,51 @@
+@import url("menu.css");
+@import url("game.css");
+
+
+:root
+{
+	--color-1: #ddfac2;
+	--color-2: #ebecbe;
+	--color-3: #ecd9b3;
+	--color-4: #ecc28a;
+	--color-5: #f5a1a1;
+	--color-6: #fda785;
+	--color-7: #fda785;
+	--color-8: #fda785;	
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace, sans-serif;
+	font-weight: bold;
+	user-select: none;
+	letter-spacing: .05em;
+}
+
+body
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 100vw;
+	height: 100vh;
+	background: url("../assets/Images/grass.png");
+	background-size: 30%;
+	overflow: hidden;
+	box-shadow: inset 0px 0px 100px 20px #000;
+	color: #fff;
+	text-shadow: 5px 5px 1px #000;
+}
+#copyright
+{
+	z-index: -1;
+	position: absolute;
+	bottom: 10px;
+	left: 40px;
+	font-size: 2em;
+	color: #fff;
+}
