@@ -31,6 +31,8 @@ restart_button = document.getElementById("restart");
 //======================================================================================================
 const mine_explosion_sfx = new Audio('./assets/SFX/mine_explosion.mp3');
 const flag_disappear_sfx = new Audio('./assets/SFX/flag.mp3');
+flag_disappear_sfx.volume = "0.5";
+mine_explosion_sfx.volume = "0.4";
 //======================================================================================================
 //                                     	    EventListeners
 //======================================================================================================
