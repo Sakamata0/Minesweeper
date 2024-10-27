@@ -31,8 +31,6 @@ restart_button = document.getElementById("restart");
 //======================================================================================================
 const mine_explosion_sfx = new Audio('./assets/SFX/mine_explosion.mp3');
 const flag_disappear_sfx = new Audio('./assets/SFX/flag.mp3');
-flag_disappear_sfx.volume = "0.5";
-mine_explosion_sfx.volume = "0.4";
 //======================================================================================================
 //                                     	    EventListeners
 //======================================================================================================
@@ -354,6 +352,7 @@ function animation_flag_disappear(e)
 {
 	e.classList.add("animation_flag");
 	flag_disappear_sfx.play();
+	flag_disappear_sfx.volume = "0.5";
 	setTimeout(()=>{
 		e.classList.remove("animation_flag");
 	},300);
@@ -362,6 +361,7 @@ function animation_mine(e)
 {
 	e.classList.add("mine_explosion");
 	mine_explosion_sfx.play();
+	mine_explosion_sfx.volume = "0.4";
 	setTimeout(()=>{
 		e.classList.remove("mine_explosion");
 	},300);
